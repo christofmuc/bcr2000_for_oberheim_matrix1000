@@ -36,7 +36,7 @@ $encoder 2
   .resolution 64 64 127 127
 ; DCO 1 Waveform Enable  Bit0 = Pulse
 $button 2
-  .easypar CC 20 15 0 3 increment 1
+  .easypar CC 16 15 3 0 increment 1
   .tx $F0 $10 $06 $06 $06 val $F7
   .minmax 0 3
   .default 0
@@ -52,7 +52,7 @@ $encoder 3
   .resolution 64 64 127 127
 ; DCO 1 Waveform Enable  Bit1 = Wave
 $button 3
-  .easypar CC 20 15 0 3 increment 1
+  .easypar CC 16 15 3 0 increment 1
   .tx $F0 $10 $06 $06 $06 val $F7
   .minmax 0 3
   .default 0
@@ -98,7 +98,7 @@ $encoder 6
   .resolution 64 64 127 127
 ; DCO 2 Waveform Enable  Bit0 = Pulse
 $button 6
-  .easypar CC 21 15 0 7 increment 1
+  .easypar CC 12 15 7 0 increment 1
   .tx $F0 $10 $06 $06 $10 val $F7
   .minmax 0 7
   .default 0
@@ -114,7 +114,7 @@ $encoder 7
   .resolution 64 64 127 127
 ; DCO 2 Waveform Enable  Bit1 = Wave
 $button 7
-  .easypar CC 21 15 0 7 increment 1
+  .easypar CC 12 15 7 0 increment 1
   .tx $F0 $10 $06 $06 $10 val $F7
   .minmax 0 7
   .default 0
@@ -659,7 +659,7 @@ $encoder 4
   .resolution 64 64 127 127
 ; Tracking Generator Input Source Code(See Table 2)
 $encoder 33
-  .tx $F0 $10 $06 $06 $FFFFFFFF val $F7
+  .tx $F0 $10 $06 $06 $21 val $F7
   .minmax 0 31
   .default 0
   .mode 1dot
