@@ -11,605 +11,526 @@ $preset
   .egroups 4
   .lock off
   .init
-; DCO 1 Initial Frequency  LSB = 1 Semitone
-$encoder 1
+$encoder 1 ; DCO 1 Initial Frequency  LSB = 1 Semitone
   .tx $F0 $10 $06 $06 $00 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 1 Click
-$button 1
+$button 1 ; DCO 1 Click
   .tx $F0 $10 $06 $06 $09 val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; DCO 1 Initial Waveshape  0 = Sawtooth  31 = Triangle
-$encoder 2
+$encoder 2 ; DCO 1 Initial Waveshape  0 = Sawtooth  31 = Triangle
   .tx $F0 $10 $06 $06 $05 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 1 Waveform Enable  Bit0 = Pulse
-$button 2
+$button 2 ; DCO 1 Waveform Enable  Bit0 = Pulse
   .easypar CC 16 15 3 0 increment 1
   .tx $F0 $10 $06 $06 $06 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 1 Initial Pulse width
-$encoder 3
+$encoder 3 ; DCO 1 Initial Pulse width
   .tx $F0 $10 $06 $06 $03 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 1 Waveform Enable  Bit1 = Wave
-$button 3
+$button 3 ; DCO 1 Waveform Enable  Bit1 = Wave
   .easypar CC 16 15 3 0 increment 1
   .tx $F0 $10 $06 $06 $06 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Mix
-$encoder 4
+$encoder 4 ; Mix
   .tx $F0 $10 $06 $06 $14 val $F7
   .minmax 63 0
   .default 0
   .mode pan
   .showvalue on
   .resolution 64 64 127 127
-; DCO Sync mode
-$button 4
+$button 4 ; DCO Sync mode
   .tx $F0 $10 $06 $06 $02 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 2 Initial Frequency  LSB = 1 Semitone
-$encoder 5
+$encoder 5 ; DCO 2 Initial Frequency  LSB = 1 Semitone
   .tx $F0 $10 $06 $06 $0A val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 2 Click
-$button 5
+$button 5 ; DCO 2 Click
   .tx $F0 $10 $06 $06 $13 val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; DCO 2 Initial Waveshape  0 = Sawtooth  31 = Triangle
-$encoder 6
+$encoder 6 ; DCO 2 Initial Waveshape  0 = Sawtooth  31 = Triangle
   .tx $F0 $10 $06 $06 $0F val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 2 Waveform Enable  Bit0 = Pulse
-$button 6
+$button 6 ; DCO 2 Waveform Enable  Bit0 = Pulse
   .easypar CC 12 15 7 0 increment 1
   .tx $F0 $10 $06 $06 $10 val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 2 Initial Pulse width
-$encoder 7
+$encoder 7 ; DCO 2 Initial Pulse width
   .tx $F0 $10 $06 $06 $0D val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 2 Waveform Enable  Bit1 = Wave
-$button 7
+$button 7 ; DCO 2 Waveform Enable  Bit1 = Wave
   .easypar CC 12 15 7 0 increment 1
   .tx $F0 $10 $06 $06 $10 val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 2 Detune
-$encoder 8
+$encoder 8 ; DCO 2 Detune
   .tx $F0 $7D $40 val cks-2 2 $71 $F7 $F0 $10 $06 $06 $0C cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Initial Speed
-$encoder 9
+$encoder 9 ; LFO 1 Initial Speed
   .tx $F0 $10 $06 $06 $50 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Waveshape(see table 1)
-$button 9
+$button 9 ; LFO 1 Waveshape(see table 1)
   .tx $F0 $10 $06 $06 $52 val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; LFO 1 Initial Amplitude
-$encoder 10
+$encoder 10 ; LFO 1 Initial Amplitude
   .tx $F0 $10 $06 $06 $54 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Trigger
-$button 10
+$button 10 ; LFO 1 Trigger
   .tx $F0 $10 $06 $06 $56 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 1 Freq.by LFO 1 Amount
-$encoder 11
+$encoder 11 ; DCO 1 Freq.by LFO 1 Amount
   .tx $F0 $7D $40 val cks-2 2 $7C $F7 $F0 $10 $06 $06 $01 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 2 Freq.by LFO 1 Amount
-$encoder 12
+$encoder 12 ; DCO 2 Freq.by LFO 1 Amount
   .tx $F0 $7D $40 val cks-2 2 $72 $F7 $F0 $10 $06 $06 $0B cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Initial Speed
-$encoder 13
+$encoder 13 ; LFO 2 Initial Speed
   .tx $F0 $10 $06 $06 $5A val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Waveshape
-$button 13
+$button 13 ; LFO 2 Waveshape
   .tx $F0 $10 $06 $06 $5C val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; LFO 2 Initial Amplitude
-$encoder 14
+$encoder 14 ; LFO 2 Initial Amplitude
   .tx $F0 $10 $06 $06 $5E val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Trigger
-$button 14
+$button 14 ; LFO 2 Trigger
   .tx $F0 $10 $06 $06 $60 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 1 PW by LFO 2 Amount
-$encoder 15
+$encoder 15 ; DCO 1 PW by LFO 2 Amount
   .tx $F0 $7D $40 val cks-2 2 $79 $F7 $F0 $10 $06 $06 $04 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; DCO 2 PW by LFO 2 Amount
-$encoder 16
+$encoder 16 ; DCO 2 PW by LFO 2 Amount
   .tx $F0 $7D $40 val cks-2 2 $6F $F7 $F0 $10 $06 $06 $0E cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Ramp 1 Rate
-$encoder 17
+$encoder 17 ; Ramp 1 Rate
   .tx $F0 $10 $06 $06 $28 val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Ramp 1 Mode
-$button 17
+$button 17 ; Ramp 1 Mode
   .tx $F0 $10 $06 $06 $29 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; LFO 1 Amp.by Ramp 1 Amount
-$encoder 18
+$encoder 18 ; LFO 1 Amp.by Ramp 1 Amount
   .tx $F0 $7D $40 val cks-2 2 $28 $F7 $F0 $10 $06 $06 $55 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Ramp 2 Rate
-$encoder 19
+$encoder 19 ; Ramp 2 Rate
   .tx $F0 $10 $06 $06 $2A val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Ramp 2 Mode
-$button 19
+$button 19 ; Ramp 2 Mode
   .tx $F0 $10 $06 $06 $2B val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; LFO 2 Amp.by Ramp 2 Amount
-$encoder 20
+$encoder 20 ; LFO 2 Amp.by Ramp 2 Amount
   .tx $F0 $7D $40 val cks-2 2 $1E $F7 $F0 $10 $06 $06 $5F cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; VCF Freq.by Pressure Amount
-$encoder 21
+$encoder 21 ; VCF Freq.by Pressure Amount
   .tx $F0 $7D $40 val cks-2 2 $66 $F7 $F0 $10 $06 $06 $17 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; VCF FM Amount by Pressure Amount
-$encoder 22
+$encoder 22 ; VCF FM Amount by Pressure Amount
   .tx $F0 $7D $40 val cks-2 2 $5D $F7 $F0 $10 $06 $06 $20 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Speed by Pressure Amount
-$encoder 23
+$encoder 23 ; LFO 1 Speed by Pressure Amount
   .tx $F0 $7D $40 val cks-2 2 $2C $F7 $F0 $10 $06 $06 $51 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Portamento Initial Rate
-$encoder 25
+$encoder 25 ; Portamento Initial Rate
   .tx $F0 $10 $06 $06 $2C val $F7
   .minmax 0 63
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Lag Mode
-$button 25
+$button 25 ; Lag Mode
   .tx $F0 $10 $06 $06 $2E val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Portamento rate by Velocity Amount
-$encoder 26
+$encoder 26 ; Portamento rate by Velocity Amount
   .tx $F0 $7D $40 val cks-2 2 $50 $F7 $F0 $10 $06 $06 $2D cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Legato Portamento Enable
-$button 26
+$button 26 ; Legato Portamento Enable
   .tx $F0 $10 $06 $06 $2F val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; Env 1 Amplitude by Velovity Amount
-$encoder 27
+$encoder 27 ; Env 1 Amplitude by Velovity Amount
   .tx $F0 $7D $40 val cks-2 2 $45 $F7 $F0 $10 $06 $06 $38 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Amplitude by Velovity Amount
-$encoder 28
+$encoder 28 ; Env 2 Amplitude by Velovity Amount
   .tx $F0 $7D $40 val cks-2 2 $3B $F7 $F0 $10 $06 $06 $42 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Amplitude by Velovity Amount
-$encoder 29
+$encoder 29 ; Env 3 Amplitude by Velovity Amount
   .tx $F0 $7D $40 val cks-2 2 $31 $F7 $F0 $10 $06 $06 $4C cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; VCA 1 by Velocity Amount
-$encoder 30
+$encoder 30 ; VCA 1 by Velocity Amount
   .tx $F0 $7D $40 val cks-2 2 $61 $F7 $F0 $10 $06 $06 $1C cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Speed by Keyboard Amount
-$encoder 31
+$encoder 31 ; LFO 2 Speed by Keyboard Amount
   .tx $F0 $7D $40 val cks-2 2 $22 $F7 $F0 $10 $06 $06 $5B cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; VCF Initial Frequency  LSB = 1 Semitone
-$encoder 33
+$encoder 33 ; VCF Initial Frequency  LSB = 1 Semitone
   .tx $F0 $10 $06 $06 $15 val $F7
   .minmax 0 127
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Keyboard mode
-$button 33
+$button 33 ; Keyboard mode
   .tx $F0 $10 $06 $06 $30 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; VCF Initial Resonance
-$encoder 34
+$encoder 34 ; VCF Initial Resonance
   .tx $F0 $10 $06 $06 $18 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; DCO 1 Fixed Modulations  Bit0 = Lever 1
-$button 34
+$button 34 ; DCO 1 Fixed Modulations  Bit0 = Lever 1
   .tx $F0 $10 $06 $06 $07 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; VCF FM Initial Amount
-$encoder 35
+$encoder 35 ; VCF FM Initial Amount
   .tx $F0 $10 $06 $06 $1E val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; DCO 1 Fixed Modulations  Bit0 = Portamento  (Bit1 = Not used)
-$button 35
+$button 35 ; DCO 1 Fixed Modulations  Bit0 = Portamento  (Bit1 = Not used)
   .tx $F0 $10 $06 $06 $08 val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; DCO 2 Fixed Modulations  Bit0 = Lever 1
-$button 36
+$button 36 ; DCO 2 Fixed Modulations  Bit0 = Lever 1
   .tx $F0 $10 $06 $06 $11 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; DCO 2 Fixed Modulations  Bit0 = Portamento
-$button 37
+$button 37 ; DCO 2 Fixed Modulations  Bit0 = Portamento
   .tx $F0 $10 $06 $06 $12 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; VCA 1 (exponential)Initial Amount
-$encoder 38
+$encoder 38 ; VCA 1 (exponential)Initial Amount
   .tx $F0 $10 $06 $06 $1B val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; VCF Fixed Modulations  Bit0 = Lever 1
-$button 38
+$button 38 ; VCF Fixed Modulations  Bit0 = Lever 1
   .tx $F0 $10 $06 $06 $19 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Standard CC Controller $5e
-$encoder 39
+$encoder 39 ; Standard CC Controller $ 5e
   .easypar CC 1 94 0 127 absolute
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Lag Enable
-$button 39
+$button 39 ; LFO 1 Lag Enable
   .tx $F0 $10 $06 $06 $57 val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; Standard CC Controller $07
-$encoder 40
+$encoder 40 ; Standard CC Controller $ 07
   .easypar CC 1 7 0 127 absolute
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Lag Enable
-$button 40
+$button 40 ; LFO 2 Lag Enable
   .tx $F0 $10 $06 $06 $61 val $F7
   .minmax 0 1
   .default 0
   .mode toggle
   .showvalue on
-; Env 1 Initial Delay Time
-$encoder 41
+$encoder 41 ; Env 1 Initial Delay Time
   .tx $F0 $10 $06 $06 $32 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 1 Trigger Mode  Bit0 = Reset
-$button 41
+$button 41 ; Env 1 Trigger Mode  Bit0 = Reset
   .tx $F0 $10 $06 $06 $39 val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; Env 1 Initial Attack Time
-$encoder 42
+$encoder 42 ; Env 1 Initial Attack Time
   .tx $F0 $10 $06 $06 $33 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 1 LFO Trigger Mode  Bit0 = Gated
-$button 42
+$button 42 ; Env 1 LFO Trigger Mode  Bit0 = Gated
   .tx $F0 $10 $06 $06 $3B val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Env 1 Initial Decay Time
-$encoder 43
+$encoder 43 ; Env 1 Initial Decay Time
   .tx $F0 $10 $06 $06 $34 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 1 Mode  Bit0 = DADR Mode
-$button 43
+$button 43 ; Env 1 Mode  Bit0 = DADR Mode
   .tx $F0 $10 $06 $06 $3A val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Env 1 Sustain Level
-$encoder 44
+$encoder 44 ; Env 1 Sustain Level
   .tx $F0 $10 $06 $06 $35 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 1 Initial Release Time
-$encoder 45
+$encoder 45 ; Env 1 Initial Release Time
   .tx $F0 $10 $06 $06 $36 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Trigger Mode  Bit0 = Reset
-$button 45
+$button 45 ; Env 2 Trigger Mode  Bit0 = Reset
   .tx $F0 $10 $06 $06 $43 val $F7
   .minmax 0 7
   .default 0
   .mode incval 1
   .showvalue on
-; Env 1 Initial Amplitude
-$encoder 46
+$encoder 46 ; Env 1 Initial Amplitude
   .tx $F0 $10 $06 $06 $37 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 LFO Trigger Mode  Bit0 = Gated
-$button 46
+$button 46 ; Env 2 LFO Trigger Mode  Bit0 = Gated
   .tx $F0 $10 $06 $06 $45 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; VCF Freq.by Env 1 Amount
-$encoder 47
+$encoder 47 ; VCF Freq.by Env 1 Amount
   .tx $F0 $7D $40 val cks-2 2 $67 $F7 $F0 $10 $06 $06 $16 cks-2 4 $F7
   .minmax 0 127
   .default 64
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Mode  Bit0 = DADR Mode
-$button 47
+$button 47 ; Env 2 Mode  Bit0 = DADR Mode
   .tx $F0 $10 $06 $06 $44 val $F7
   .minmax 0 3
   .default 0
   .mode incval 1
   .showvalue on
-; Env 2 Initial Delay Time
-$encoder 49
+$encoder 49 ; Env 2 Initial Delay Time
   .tx $F0 $10 $06 $06 $3C val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Initial Attack Time
-$encoder 50
+$encoder 50 ; Env 2 Initial Attack Time
   .tx $F0 $10 $06 $06 $3D val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Initial Decay Time
-$encoder 51
+$encoder 51 ; Env 2 Initial Decay Time
   .tx $F0 $10 $06 $06 $3E val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Sustain Level
-$encoder 52
+$encoder 52 ; Env 2 Sustain Level
   .tx $F0 $10 $06 $06 $3F val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Initial Release Time
-$encoder 53
+$encoder 53 ; Env 2 Initial Release Time
   .tx $F0 $10 $06 $06 $40 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 2 Initial Amplitude
-$encoder 54
+$encoder 54 ; Env 2 Initial Amplitude
   .tx $F0 $10 $06 $06 $41 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; VCA 2 by Env 2 Amount
-$encoder 55
+$encoder 55 ; VCA 2 by Env 2 Amount
   .tx $F0 $7D $40 val cks-2 2 $60 $F7 $F0 $10 $06 $06 $1D cks-2 4 $F7
   .minmax 0 127
   .default 64
@@ -625,128 +546,112 @@ $preset
   .egroups 4
   .lock off
   .init
-; LFO 1 Retrigger point
-$encoder 1
+$encoder 1 ; LFO 1 Retrigger point
   .tx $F0 $10 $06 $06 $53 val $F7
   .minmax 0 31
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 1 Sampled Source Number
-$encoder 2
+$encoder 2 ; LFO 1 Sampled Source Number
   .tx $F0 $10 $06 $06 $58 val $F7
   .minmax 0 31
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Retrigger point
-$encoder 3
+$encoder 3 ; LFO 2 Retrigger point
   .tx $F0 $10 $06 $06 $5D val $F7
   .minmax 0 31
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; LFO 2 Sampled Source Number
-$encoder 4
+$encoder 4 ; LFO 2 Sampled Source Number
   .tx $F0 $10 $06 $06 $62 val $F7
   .minmax 0 31
   .default 0
   .mode bar
   .showvalue on
   .resolution 64 64 127 127
-; Tracking Generator Input Source Code(See Table 2)
-$encoder 33
+$encoder 33 ; Tracking Generator Input Source Code(See Table 2)
   .tx $F0 $10 $06 $06 $21 val $F7
   .minmax 0 31
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Tracking Point 1
-$encoder 34
+$encoder 34 ; Tracking Point 1
   .tx $F0 $10 $06 $06 $22 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Tracking Point 2
-$encoder 35
+$encoder 35 ; Tracking Point 2
   .tx $F0 $10 $06 $06 $23 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Tracking Point 3
-$encoder 36
+$encoder 36 ; Tracking Point 3
   .tx $F0 $10 $06 $06 $24 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Tracking Point 4
-$encoder 37
+$encoder 37 ; Tracking Point 4
   .tx $F0 $10 $06 $06 $25 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Initial Delay Time
-$encoder 49
+$encoder 49 ; Env 3 Initial Delay Time
   .tx $F0 $10 $06 $06 $46 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Initial Attack Time
-$encoder 50
+$encoder 50 ; Env 3 Initial Attack Time
   .tx $F0 $10 $06 $06 $47 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Initial Decay Time
-$encoder 51
+$encoder 51 ; Env 3 Initial Decay Time
   .tx $F0 $10 $06 $06 $48 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Sustain Level
-$encoder 52
+$encoder 52 ; Env 3 Sustain Level
   .tx $F0 $10 $06 $06 $49 val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Initial Release Time
-$encoder 53
+$encoder 53 ; Env 3 Initial Release Time
   .tx $F0 $10 $06 $06 $4A val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; Env 3 Initial Amplitude
-$encoder 54
+$encoder 54 ; Env 3 Initial Amplitude
   .tx $F0 $10 $06 $06 $4B val $F7
   .minmax 0 63
   .default 0
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-; VCF FM Amount by Env 3 Amount
-$encoder 55
+$encoder 55 ; VCF FM Amount by Env 3 Amount
   .tx $F0 $7D $40 val cks-2 2 $5E $F7 $F0 $10 $06 $06 $1F cks-2 4 $F7
   .minmax 0 127
   .default 64
