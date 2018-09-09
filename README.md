@@ -4,7 +4,7 @@ sophisticated and most importantly wouldn't deal with negative numbers correctly
 
 The SYX file contains two presets, ready to be sent to your BCR 2000 via any Sysex capable MIDI tool (e.g. MIDI-OX). 
 
-**WARNING**: As provided, the SYX file will store two presets at preset positions 1 and 2 in your BCR2000, so make sure before you send it
+**WARNING**: As provided, the SYX file will store two presets at preset positions 31 and 32 in your BCR2000, so make sure before you send it
 that there is nothing in these two presets you cannot bring back if you need it.
 
 The BCL file located above contains the cleartext instructions in BCL format (an enormous thanks to Mark van den Berg for providing the excellent document 

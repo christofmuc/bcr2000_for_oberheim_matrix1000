@@ -616,7 +616,7 @@ $encoder 55
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-$store 1
+$store 31
 $preset
   .name 'Matrix1000 Second'
   .snapshot off
@@ -753,6 +753,6 @@ $encoder 55
   .mode 1dot
   .showvalue on
   .resolution 64 64 127 127
-$store 2
-$recall 1
+$store 32
+$recall 31
 $end
