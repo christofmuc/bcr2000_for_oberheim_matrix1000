@@ -27,4 +27,6 @@ The only advantages over the version with the Sysex I can see is that NRPNs are 
 
 The NRPN is definitely better when you want to record parameter changes in a DAW.
 
+Note that the NRPN Preset is coded for MIDI channel 1 - in case you want a different channel (very likely), you need to change the `.easypar NRPN 1` into e.g. for channel 9 `.easypar NRPN 9` in the BCL file, use BCConvert to recreate the SYX and send that to the BCR2000.
+
 
